@@ -1,0 +1,41 @@
+framework:
+    workflows:
+        weapon_creation:
+            marking_store:
+                type: property_accessor
+            supports:
+                - AppBundle\Entity\Item
+            # list of possible places
+            places:
+                - draft
+                - job_learned
+                - learning_recipe
+                - recipe_known
+                - collecting_iron
+                - iron_ready
+                - asking_for_leather
+                - leather_ready
+                - crafted
+            # list of possible transitions
+            transitions:
+                be_teached:
+                    from: draft
+                    to: job_learned
+                crafting_the_armor:
+                    from: job_learned
+                    to:
+                      - learning_recipe
+                      - collecting_iron
+                      - asking_for_leather
+                iron_found:
+                    from: collecting_iron
+                    to: iron_ready
+                download_leather:
+                    from: asking_for_leather
+                    to: leather_ready
+                craft:
+                    from:
+                      - recipe_known
+                      - iron_ready
+                      - leather_ready
+                    to: crafted

@@ -1,0 +1,32 @@
+winzou_state_machine:
+    my_bundle_article:
+        class: AppBundle\Entity\PlayerCharacter
+        property_path: state
+        graph: simple
+        # list of all possible states:
+        states:
+            - wander
+            - attack
+            - evade
+            - find_aid
+        # list of all possible transitions:
+        transitions:
+            enemy_near:
+                from:
+                  - wander
+                to: attack
+            enemy_out_of_sign:
+                from: [attack]
+                to: wander
+            enemy_attack_back:
+                from: [attack]
+                to: evade
+            enemy_idle:
+                from: [evade]
+                to: attack
+            helthpoints_low:
+                from: [evade]
+                to: find_aid
+            bandaged:
+                from: [find_aid]
+                to: wander
