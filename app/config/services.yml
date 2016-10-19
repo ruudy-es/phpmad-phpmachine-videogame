@@ -4,6 +4,22 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    validator.weapon_crafting.has_been_taught:
+        class: AppBundle\Validator\WeaponCrafting\HasBeenTaughtValidator
+        arguments:
+          - "@doctrine.orm.default_entity_manager"
+        tags:
+          - { name: validator.constraint_validator, alias: weapon_crafting_has_been_taught_validator }
+    validator.weapon_crafting.is_recipe_learned:
+        class: AppBundle\Validator\WeaponCrafting\IsRecipeLearnedValidator
+        tags:
+          - { name: validator.constraint_validator, alias: weapon_crafting_is_recipe_learned_validator }
+    validator.weapon_crafting.is_iron_collected:
+        class: AppBundle\Validator\WeaponCrafting\IsIronCollectedValidator
+        tags:
+          - { name: validator.constraint_validator, alias: weapon_crafting_is_iron_collected_validator }
+    validator.weapon_crafting.is_leather_bought:
+        class: AppBundle\Validator\WeaponCrafting\IsLeatherboughtValidator
+        tags:
+          - { name: validator.constraint_validator, alias: weapon_crafting_is_leather_bought_validator }
+

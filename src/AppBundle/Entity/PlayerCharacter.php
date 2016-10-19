@@ -69,8 +69,18 @@ class PlayerCharacter
      */
     private $items;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="TradeSkill")
+     * @ORM\JoinTable(name="player_haracters_trade_skills",
+     *      joinColumns={@ORM\JoinColumn(name="player_character_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="trade_skill_id", referencedColumnName="id")}
+     *      )
+     */
+    private $tradeSkills;
+
     public function __construct() {
         $this->items = new ArrayCollection();
+        $this->tradeSkills = new ArrayCollection();
     }
 
     /**

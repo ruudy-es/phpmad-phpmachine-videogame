@@ -1,6 +1,6 @@
 framework:
     workflows:
-        weapon_creation:
+        weapon_crafting:
             marking_store:
                 type: property_accessor
             supports:
@@ -8,7 +8,7 @@ framework:
             # list of possible places
             places:
                 - draft
-                - job_learned
+                - trade_skill_learned
                 - learning_recipe
                 - recipe_known
                 - collecting_iron
@@ -18,19 +18,22 @@ framework:
                 - crafted
             # list of possible transitions
             transitions:
-                be_teached:
+                knowledge_acquired:
                     from: draft
-                    to: job_learned
-                crafting_the_armor:
-                    from: job_learned
+                    to: trade_skill_learned
+                craft_it:
+                    from: trade_skill_learned
                     to:
                       - learning_recipe
                       - collecting_iron
                       - asking_for_leather
-                iron_found:
+                reciper_learned:
+                    from: learning_recipe
+                    to: recipe_known
+                iron_collected:
                     from: collecting_iron
                     to: iron_ready
-                download_leather:
+                leather_bought:
                     from: asking_for_leather
                     to: leather_ready
                 craft:

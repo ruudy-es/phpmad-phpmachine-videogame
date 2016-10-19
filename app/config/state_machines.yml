@@ -1,5 +1,5 @@
 winzou_state_machine:
-    my_bundle_article:
+    player_vs_enemy:
         class: AppBundle\Entity\PlayerCharacter
         property_path: state
         graph: simple

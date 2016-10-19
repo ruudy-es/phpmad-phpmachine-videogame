@@ -10,4 +10,24 @@ namespace AppBundle\Repository;
  */
 class PlayerCharacterRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * @param $playerCharacterId
+     * @param $tradeSkillId
+     *
+     * @return bool
+     */
+    public function hasRequiredTradeSkill($playerCharacterId, $tradeSkillId)
+    {
+         $result = $this->createQueryBuilder('pc')
+             ->select('count(distinct(pc.id))')
+             ->innerJoin('pc.tradeSkills', 'ts')
+             ->where('pc.id = :player_character_id')
+                 ->setParameter('player_character_id', $playerCharacterId)
+             ->andWhere('ts.id = :trade_skill_id')
+                 ->setParameter('trade_skill_id', $tradeSkillId)
+             ->getQuery()
+             ->getSingleScalarResult();
+
+        return ($result > 0);
+    }
 }
