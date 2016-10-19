@@ -46,13 +46,13 @@ class WeaponCrafting
     {
         $this->item = $item;
 
-        $this->decide();
+        $this->transite();
     }
 
     /**
      * Automatic moves
      */
-    protected function decide()
+    protected function transite()
     {
         $marking = $this->workflowComponent->getMarking($this->item);
 
