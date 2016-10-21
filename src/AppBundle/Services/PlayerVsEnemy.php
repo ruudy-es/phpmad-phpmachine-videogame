@@ -35,7 +35,7 @@ class PlayerVsEnemy
      */
 
     /**
-     * @param Campaign $campaign
+     * @param PlayerCharacter $playerCharacter
      *
      * @throws \SM\SMException
      */

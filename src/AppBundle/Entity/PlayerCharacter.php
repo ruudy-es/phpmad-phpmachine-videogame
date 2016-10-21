@@ -62,7 +62,7 @@ class PlayerCharacter
      *
      * @ORM\Column(name="state", type="string", length=45, nullable=true)
      */
-    private $state;
+    private $state = 'wander';
 
     /**
      * @ORM\OneToMany(targetEntity="Item", mappedBy="playerCharacter")

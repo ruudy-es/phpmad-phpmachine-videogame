@@ -32,6 +32,8 @@ class LoadTradeSkills extends AbstractFixture implements OrderedFixtureInterface
 
         $manager->persist($weaponsmith);
 
+        $this->addReference('weaponsmith', $armorsmith);
+
         $manager->flush();
     }
 

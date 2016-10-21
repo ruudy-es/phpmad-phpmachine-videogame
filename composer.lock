@@ -705,12 +705,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "a353cb81a34e70189ad3246d07c844d7fe8699ce"
+                "reference": "d6eddab94fd71f18ee80b9d7f2a26fd4b32b246c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/a353cb81a34e70189ad3246d07c844d7fe8699ce",
-                "reference": "a353cb81a34e70189ad3246d07c844d7fe8699ce",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/d6eddab94fd71f18ee80b9d7f2a26fd4b32b246c",
+                "reference": "d6eddab94fd71f18ee80b9d7f2a26fd4b32b246c",
                 "shasum": ""
             },
             "require": {
@@ -776,7 +776,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2016-10-11 15:02:07"
+            "time": "2016-10-18 17:00:10"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1332,10 +1332,10 @@
             "require": {
                 "monolog/monolog": "~1.18",
                 "php": ">=5.3.2",
-                "symfony/config": "~2.3|~3.0",
-                "symfony/dependency-injection": "~2.3|~3.0",
-                "symfony/http-kernel": "~2.3|~3.0",
-                "symfony/monolog-bridge": "~2.3|~3.0"
+                "symfony/config": "~2.7|~3.0",
+                "symfony/dependency-injection": "~2.7|~3.0",
+                "symfony/http-kernel": "~2.7|~3.0",
+                "symfony/monolog-bridge": "~2.7|~3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.8",
@@ -1718,12 +1718,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/swiftmailer-bundle.git",
-                "reference": "99bd0ceb57b44066b695653356b82dabdc4bd95e"
+                "reference": "c6e5fdd6df731f7a0ecc1d7f3a177b7fac8e1340"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/99bd0ceb57b44066b695653356b82dabdc4bd95e",
-                "reference": "99bd0ceb57b44066b695653356b82dabdc4bd95e",
+                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/c6e5fdd6df731f7a0ecc1d7f3a177b7fac8e1340",
+                "reference": "c6e5fdd6df731f7a0ecc1d7f3a177b7fac8e1340",
                 "shasum": ""
             },
             "require": {
@@ -1769,7 +1769,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2016-10-09 15:35:42"
+            "time": "2016-10-19 14:15:25"
         },
         {
             "name": "symfony/symfony",
@@ -1777,12 +1777,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "9fc7306f7277ebf378b729bac3b42dfa55971af1"
+                "reference": "4eeb1f018b9b5b7a5dd4635b7006ee5b4ad7e0e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/9fc7306f7277ebf378b729bac3b42dfa55971af1",
-                "reference": "9fc7306f7277ebf378b729bac3b42dfa55971af1",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/4eeb1f018b9b5b7a5dd4635b7006ee5b4ad7e0e9",
+                "reference": "4eeb1f018b9b5b7a5dd4635b7006ee5b4ad7e0e9",
                 "shasum": ""
             },
             "require": {
@@ -1795,7 +1795,7 @@
                 "symfony/polyfill-php56": "~1.0",
                 "symfony/polyfill-php70": "~1.0",
                 "symfony/polyfill-util": "~1.0",
-                "twig/twig": "~1.26|~2.0"
+                "twig/twig": "~1.27|~2.0"
             },
             "conflict": {
                 "phpdocumentor/reflection-docblock": "<3.0",
@@ -1911,7 +1911,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-10-17 18:35:41"
+            "time": "2016-10-19 22:39:05"
         },
         {
             "name": "twig/twig",
@@ -1919,12 +1919,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "c5259552e1def56a9632e1d07ecb45e8981b7585"
+                "reference": "2e10b897baf423686d535612d3383b0db0afad79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c5259552e1def56a9632e1d07ecb45e8981b7585",
-                "reference": "c5259552e1def56a9632e1d07ecb45e8981b7585",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/2e10b897baf423686d535612d3383b0db0afad79",
+                "reference": "2e10b897baf423686d535612d3383b0db0afad79",
                 "shasum": ""
             },
             "require": {
@@ -1973,7 +1973,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-10-17 22:13:54"
+            "time": "2016-10-20 15:18:42"
         },
         {
             "name": "winzou/state-machine",

@@ -18,6 +18,20 @@ class LoadItems extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
+        $sword = new Item();
+        $sword->setName('Sword');
+        $sword->setTradeSkill($this->getReference('weaponsmith'));
+        $sword->setPlayerCharacter($this->getReference('me'));
+
+        $manager->persist($sword);
+
+        $shield = new Item();
+        $shield->setName('Shield');
+        $shield->setTradeSkill($this->getReference('armorsmith'));
+        $shield->setPlayerCharacter($this->getReference('me'));
+
+        $manager->persist($shield);
+
         $ironChest = new Item();
         $ironChest->setName('Iron Chest');
         $ironChest->setTradeSkill($this->getReference('armorsmith'));

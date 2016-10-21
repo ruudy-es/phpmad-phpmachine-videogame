@@ -29,11 +29,11 @@ class Item
     private $name;
 
     /**
-     * @var string
+     * @var array
      *
-     * @ORM\Column(name="marking", type="string", length=255, nullable=true)
+     * @ORM\Column(name="marking", type="array", length=255, nullable=true)
      */
-    private $marking;
+    private $marking = ['draft' => 1];
 
     /**
      * @ORM\ManyToOne(targetEntity="PlayerCharacter", inversedBy="items")
@@ -84,7 +84,7 @@ class Item
     /**
      * Set marking
      *
-     * @param string $marking
+     * @param array $marking
      *
      * @return Item
      */
@@ -98,7 +98,7 @@ class Item
     /**
      * Get marking
      *
-     * @return string
+     * @return array
      */
     public function getMarking()
     {

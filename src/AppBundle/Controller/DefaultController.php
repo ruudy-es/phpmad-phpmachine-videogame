@@ -9,13 +9,19 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/game", name="game")
      */
-    public function indexAction(Request $request)
+    public function gameAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        $em = $this->getDoctrine()->getManager();
+
+        $playerCharacter = $em->getRepository('AppBundle:PlayerCharacter')->findOneBy(['name' => 'Me']);
+
+        $weaponMarking = $em->getRepository('AppBundle:Item')->findOneBy(['name' => 'Sword'])->getMarking();
+
+        return $this->render('game.html.twig', [
+            'player_character' => $playerCharacter,
+            'weapon_marking' => implode('_', array_keys($weaponMarking))
         ]);
     }
 }
