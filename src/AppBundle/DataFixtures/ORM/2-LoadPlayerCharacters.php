@@ -33,23 +33,36 @@ class LoadPlayerCharacters extends AbstractFixture implements OrderedFixtureInte
         $me->setName('Me');
         $me->setGold(100);
         $me->setHealth(100);
-        $me->setAttack(30);
-        $me->setDefense(20);
+        $me->setAttack(0);
+        $me->setDefense(0);
 
-        $enemy = new PlayerCharacter();
-        $enemy->setId(2);
-        $metadata = $manager->getClassMetadata(get_class($enemy));
+        $noob = new PlayerCharacter();
+        $noob->setId(2);
+        $metadata = $manager->getClassMetadata(get_class($noob));
         $metadata->setIdGenerator(new \Doctrine\ORM\Id\AssignedGenerator());
         $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetadata::GENERATOR_TYPE_NONE);
-        $enemy->setMapZone($kingLanding);
-        $enemy->setName('Enemy');
-        $enemy->setGold(0);
-        $enemy->setHealth(100);
-        $enemy->setAttack(40);
-        $enemy->setDefense(30);
+        $noob->setMapZone($kingLanding);
+        $noob->setName('Noob');
+        $noob->setGold(0);
+        $noob->setHealth(100);
+        $noob->setAttack(30);
+        $noob->setDefense(0);
+
+        $pro = new PlayerCharacter();
+        $pro->setId(3);
+        $metadata = $manager->getClassMetadata(get_class($pro));
+        $metadata->setIdGenerator(new \Doctrine\ORM\Id\AssignedGenerator());
+        $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetadata::GENERATOR_TYPE_NONE);
+        $pro->setMapZone($kingLanding);
+        $pro->setName('Pro');
+        $pro->setGold(0);
+        $pro->setHealth(200);
+        $pro->setAttack(80);
+        $pro->setDefense(29);
 
         $manager->persist($me);
-        $manager->persist($enemy);
+        $manager->persist($noob);
+        $manager->persist($pro);
 
         $manager->flush();
     }

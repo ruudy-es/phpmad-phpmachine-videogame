@@ -23,9 +23,12 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class SwordCrafting
 {
+    const SWORD_ATTACK = 30;
+
     protected $workflowComponent;
     protected $validator;
     protected $session;
+    /** @var Item */
     protected $item;
 
     /**
@@ -37,11 +40,13 @@ class SwordCrafting
     public function __construct(
         WorkflowComponent $workflowComponent,
         ValidatorInterface $validator,
-        Session $session
+        Session $session,
+        Actions $actions
     ) {
         $this->workflowComponent = $workflowComponent;
         $this->validator = $validator;
         $this->session = $session;
+        $this->actions = $actions;
     }
 
     /**
@@ -95,9 +100,11 @@ class SwordCrafting
             if (count($errors) == 0) {
                 $this->workflowComponent->apply($this->item, 'knowledge_acquired');
 
-                $this->session->getFlashBag()->add('notice', 'The Player adquired the needed Trade Skill to buil a Sword');
+                $this->session->getFlashBag()->add(
+                    'notice',
+                    $this->item->getPlayerCharacter()->getName().' adquired the Trade Skill needed to buil a Sword'
+                );
             } else {
-//                $this->session->getFlashBag()->add('notice', 'The Player should adquire the needed Trade Skill to buil a Sword');
                 $this->fetchErrorsIntoSession($errors, 'notice');
             }
         }
@@ -112,14 +119,16 @@ class SwordCrafting
             try {
                 $this->workflowComponent->apply($this->item, 'reciper_learned');
 
-                $this->session->getFlashBag()->add('notice', 'The Player had learned the recipe to build the Sword.');
+                $this->session->getFlashBag()->add(
+                    'notice',
+                    $this->item->getPlayerCharacter()->getName().' had learned the recipe to build the Sword.'
+                );
 
                 $this->craft();
             } catch (ExceptionInterface $e) {
                 $this->session->getFlashBag()->add('error', $e->getMessage());
             }
         } else {
-//            $this->session->getFlashBag()->add('notice', 'The Player need to lear the recipe to build the Sword.');
             $this->fetchErrorsIntoSession($errors, 'notice');
         }
     }
@@ -133,14 +142,16 @@ class SwordCrafting
             try {
                 $this->workflowComponent->apply($this->item, 'iron_collected');
 
-                $this->session->getFlashBag()->add('notice', 'The Player collected the iron needed for the Sword.');
+                $this->session->getFlashBag()->add(
+                    'notice',
+                    $this->item->getPlayerCharacter()->getName().' collected the iron needed for the Sword.'
+                );
 
                 $this->craft();
             } catch (ExceptionInterface $e) {
                 $this->session->getFlashBag()->add('error', $e->getMessage());
             }
         } else {
-//            $this->session->getFlashBag()->add('notice', 'The Player should collect the iron needed for the Sword.');
             $this->fetchErrorsIntoSession($errors, 'notice');
         }
     }
@@ -159,14 +170,16 @@ class SwordCrafting
             try {
                 $this->workflowComponent->apply($this->item, 'leather_bought');
 
-                $this->session->getFlashBag()->add('notice', 'The Player bought the leather needed for the Sword.');
+                $this->session->getFlashBag()->add(
+                    'notice',
+                    $this->item->getPlayerCharacter()->getName().' bought the leather needed for the Sword.'
+                );
 
                 $this->craft();
             } catch (ExceptionInterface $e) {
                 $this->session->getFlashBag()->add('error', $e->getMessage());
             }
         } else {
-//            $this->session->getFlashBag()->add('notice', 'The Player need to buy the leather needed for the Sword.');
             $this->fetchErrorsIntoSession($errors, 'notice');
         }
     }
@@ -176,7 +189,10 @@ class SwordCrafting
         try {
             $this->workflowComponent->apply($this->item, 'craft_it');
 
-            $this->session->getFlashBag()->add('notice', 'The Player started crafting the Sword!!!');
+            $this->session->getFlashBag()->add(
+                'notice',
+                $this->item->getPlayerCharacter()->getName().' started crafting the Sword!!!'
+            );
         } catch (ExceptionInterface $e) {
             $this->session->getFlashBag()->add('error', $e->getMessage());
         }
@@ -187,7 +203,13 @@ class SwordCrafting
         try {
             $this->workflowComponent->apply($this->item, 'craft');
 
-            $this->session->getFlashBag()->add('notice', 'The Player crafted a Sword!!!');
+            $this->session->getFlashBag()->add(
+                'notice',
+                $this->item->getPlayerCharacter()->getName().' crafted a Sword!!!'
+            );
+
+            // We increase the player attack with the value of the sword
+            $this->actions->increaseAttack($this->item->getPlayerCharacter());
         } catch (ExceptionInterface $e) {
             $this->session->getFlashBag()->add('error', $e->getMessage());
         }

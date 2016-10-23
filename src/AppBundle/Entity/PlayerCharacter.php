@@ -390,7 +390,7 @@ class PlayerCharacter
      *
      * @return PlayerCharacter
      */
-    public function setFightingWith(PlayerCharacter $playerCharacter)
+    public function setFightingWith(PlayerCharacter $playerCharacter = null)
     {
         $this->fightingWith = $playerCharacter;
 

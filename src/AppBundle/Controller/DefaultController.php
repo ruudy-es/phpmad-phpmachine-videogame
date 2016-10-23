@@ -24,9 +24,6 @@ class DefaultController extends Controller
         /** @var PlayerCharacter $playerCharacter */
         $playerCharacter = $em->getRepository('AppBundle:PlayerCharacter')->findOneBy(['name' => 'Me']);
 
-//        var_dump($playerCharacter->getTradeSkills());
-//        die();
-
         $weaponMarking = $em->getRepository('AppBundle:Item')->findOneBy(['name' => 'Sword'])->getMarking();
 
         // For images only
@@ -59,7 +56,6 @@ class DefaultController extends Controller
                 $weaponCraftingWorkflow->update($item);
 
                 $em->persist($item);
-
                 $em->flush();
 
                 break;
@@ -93,28 +89,19 @@ class DefaultController extends Controller
                 $tradeSkill->getId()
             )
         ) {
-            $this->get('session')->getFlashBag()->add('notice', 'The Player already have that Trade Skill');
+            $this->get('session')->getFlashBag()->add('notice', $playerCharacter->getName().' already have that Trade Skill');
 
             return $this->redirectToRoute('homepage');
         }
 
-        // Check if Player Character has enought gold to buy it
+        // Check if Player Character has enougth gold to buy it
         if ($tradeSkill->getCost() > $playerCharacter->getGold()) {
-            $this->get('session')->getFlashBag()->add('notice', 'The Player do not have enought gold to buy that');
+            $this->get('session')->getFlashBag()->add('notice', $playerCharacter->getName().' do not have enough gold to buy that');
 
             return $this->redirectToRoute('homepage');
         }
 
-        $playerCharacter->addTradeSkill($tradeSkill);
-        $playerCharacter->setGold(
-            $playerCharacter->getGold() - $tradeSkill->getCost()
-        );
-
-        $em->persist($playerCharacter);
-
-        $em->flush();
-
-        $this->get('session')->getFlashBag()->add('notice', 'The Player have learn: ' . $tradeSkill->getName());
+        $this->get('actions')->trainedOn($playerCharacter, $tradeSkill);
 
         return $this->redirectToRoute('homepage');
     }
@@ -135,40 +122,63 @@ class DefaultController extends Controller
         /** @var TradeSkill $tradeSkill */
         $material = $em->getRepository('AppBundle:Material')->find($request->request->get('material_id'));
 
-        // Check the Player Character have it already
+        // Check if the Player Character have it already
         if ($playerCharacterRepository->hasMaterial(
             $playerCharacter->getId(),
             $material->getId()
         )
         ) {
-            $this->get('session')->getFlashBag()->add('notice', 'The Player already have that Material');
+            $this->get('session')->getFlashBag()->add('notice', $playerCharacter->getName().' already have that Material');
 
             return $this->redirectToRoute('homepage');
         }
 
-        // Check if Player Character has enought gold to buy it
+        // Check if Player Character has enough gold to buy it
         if ($material->getCost() > $playerCharacter->getGold()) {
-            $this->get('session')->getFlashBag()->add('notice', 'The Player do not have enought gold to buy that');
+            $this->get('session')->getFlashBag()->add('notice', $playerCharacter->getName().' do not have enough gold to buy that');
 
             return $this->redirectToRoute('homepage');
         }
 
-        $playerCharacter->addMaterial($material);
-        $playerCharacter->setGold(
-            $playerCharacter->getGold() - $material->getCost()
-        );
-
-        $em->persist($playerCharacter);
-
-        $em->flush();
-
-        $this->get('session')->getFlashBag()->add('notice', 'The Player have bough: ' . $material->getName());
+        $this->get('actions')->bought($playerCharacter, $material);
 
         return $this->redirectToRoute('homepage');
     }
 
+    /**
+     * @Route("/player_vs_enemy", name="player_vs_enemy")
+     * @Method({"POST"})
+     */
     public function pvpAction(Request $request)
     {
+        $times = $request->request->get('times');
 
+        $em = $this->getDoctrine()->getManager();
+
+        $playerCharacterRepository = $em->getRepository('AppBundle:PlayerCharacter');
+
+        /** @var PlayerCharacter $playerCharacter */
+        $playerCharacter = $playerCharacterRepository->findOneBy(['name' => 'Me']);
+
+        /** @var Item $sword */
+        $sword = $em->getRepository('AppBundle:Item')->findOneBy(
+            ['name' => 'Sword']
+        );
+
+        // Check if the player haves at least one sword
+        if ($playerCharacterRepository->hasItem($playerCharacter->getId(), $sword->getId())) {
+            // State machine
+            $campaignStateMachine = $this->get('player_vs_enemy');
+            $campaignStateMachine->update($playerCharacter, $times);
+
+            $em->persist($playerCharacter);
+            $em->flush();
+        } else {
+            $this->get('session')->getFlashBag()->add(
+                'notice', 'The game strongly recommends '.$playerCharacter->getName().' to build at least a Sword before go fight with other players'
+            );
+        }
+
+        return $this->redirectToRoute('homepage');
     }
 }

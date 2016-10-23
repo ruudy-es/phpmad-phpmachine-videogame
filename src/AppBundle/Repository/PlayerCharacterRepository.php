@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Repository;
+use AppBundle\Entity\Item;
 
 /**
  * PlayerCharacterRepository
@@ -54,6 +55,28 @@ class PlayerCharacterRepository extends \Doctrine\ORM\EntityRepository
 
     /**
      * @param $playerCharacterId
+     * @param $itemId
+     *
+     * @return bool
+     */
+    public function hasItem($playerCharacterId, $itemId)
+    {
+        /** @var Item $item */
+        $item = $this->createQueryBuilder('pc')
+            ->select('i.marking')
+            ->innerJoin('pc.items', 'i')
+            ->where('pc.id = :player_character_id')
+                ->setParameter('player_character_id', $playerCharacterId)
+            ->andWhere('i.id = :item_id')
+                ->setParameter('item_id', $itemId)
+            ->getQuery()
+            ->getSingleResult();
+
+        return isset($item['marking']['crafted']);
+    }
+
+    /**
+     * @param $playerCharacterId
      * @param $playerzone
      *
      * @return mixed
@@ -64,31 +87,18 @@ class PlayerCharacterRepository extends \Doctrine\ORM\EntityRepository
             ->where('pc.id <> :player_character_id')
                 ->setParameter('player_character_id', $playerCharacterId)
             ->andWhere('pc.health <> 0')
+            ->andWhere('pc.fightingWith is null')
             ->andWhere('pc.mapZone = :map_zone')
                 ->setParameter('map_zone', $playerzone)
             ->getQuery()
             ->getResult();
 
-        return array_rand($enemies, 1);
-    }
+        if (empty($enemies)) {
+            return [];
+        }
 
-    /**
-     * @param $playerCharacterId
-     * @param $state
-     *
-     * @return mixed
-     */
-    public function findEnemyOnState($playerCharacterId, $state)
-    {
-        $enemies = $this->createQueryBuilder('pc')
-            ->where('pc.id <> :player_character_id')
-                ->setParameter('player_character_id', $playerCharacterId)
-            ->where('pc.state = :state')
-                ->setParameter('state', $state)
-            ->andWhere('pc.health <> 0')
-            ->getQuery()
-            ->getResult();
+        $index = array_rand($enemies, 1);
 
-        return array_rand($enemies, 1);
+        return $enemies[$index];
     }
 }

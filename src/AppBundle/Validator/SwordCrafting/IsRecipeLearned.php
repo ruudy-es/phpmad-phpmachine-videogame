@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraint;
 
 class IsRecipeLearned extends Constraint
 {
-    public $message = '';
+    public $message = 'The recipe has not been learn yet';
 
     public function getTargets()
     {

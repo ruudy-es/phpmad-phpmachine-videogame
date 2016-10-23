@@ -24,7 +24,7 @@ class IsRecipeLearnedValidator extends ConstraintValidator
         // TODO: Implement validate() method.
         $roll = rand(0, 100);
 
-        if ($roll >= 70) {
+        if ($roll < 70) {
             $this->context->buildViolation($constraint->message)
                 ->addViolation();
         }

@@ -4,12 +4,18 @@ parameters:
 #    parameter_name: value
 
 services:
+    actions:
+        class: AppBundle\Services\Actions
+        arguments:
+          - "@doctrine.orm.default_entity_manager"
+          - '@session'
     weapon_crafting:
         class: AppBundle\Services\SwordCrafting
         arguments:
           - '@workflow.weapon_crafting'
           - '@validator'
           - '@session'
+          - '@actions'
     validator.weapon_crafting.has_been_taught:
         class: AppBundle\Validator\SwordCrafting\HasBeenTaughtValidator
         arguments:
@@ -35,4 +41,5 @@ services:
         arguments:
           - '@sm.factory'
           - '@doctrine.orm.default_entity_manager'
-
+          - '@actions'
+          - '@session'

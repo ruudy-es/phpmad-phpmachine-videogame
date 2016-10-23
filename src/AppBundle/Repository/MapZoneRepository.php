@@ -17,6 +17,12 @@ class MapZoneRepository extends \Doctrine\ORM\EntityRepository
             ->getQuery()
             ->getResult();
 
-        return array_rand($zones, 1);
+        if (empty($zones)) {
+            return [];
+        }
+
+        $index = array_rand($zones, 1);
+
+        return $zones[$index];
     }
 }

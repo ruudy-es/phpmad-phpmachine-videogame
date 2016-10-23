@@ -12,6 +12,7 @@ use AppBundle\Entity\PlayerCharacter;
 use Doctrine\ORM\EntityManager;
 use SM\Factory\Factory;
 use SM\StateMachine\StateMachineInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class PlayerVsEnemy
 {
@@ -24,14 +25,21 @@ class PlayerVsEnemy
     protected $playerCharacter;
     /** @var StateMachineInterface */
     protected $stateMachine;
+    protected $session;
 
     protected $transitionsDone = 0;
     protected $transitionsLimit;
 
-    public function __construct(Factory $SMfactory, EntityManager $em)
-    {
+    public function __construct(
+        Factory $SMfactory,
+        EntityManager $em,
+        Actions $actions,
+        Session $session
+    ) {
         $this->SMfactory = $SMfactory;
         $this->em = $em;
+        $this->actions = $actions;
+        $this->session = $session;
     }
 
     protected function setStateMachine(PlayerCharacter $playerCharacter)
@@ -46,13 +54,13 @@ class PlayerVsEnemy
 
     /**
      * @param PlayerCharacter $playerCharacter
-     * @param $number
+     * @param $transitionsLimit
      */
-    public function update(PlayerCharacter $playerCharacter, $number)
+    public function update(PlayerCharacter $playerCharacter, $transitionsLimit)
     {
         $this->setStateMachine($playerCharacter);
         $this->transitionsDone = 0;
-        $this->transitionsLimit = $number;
+        $this->transitionsLimit = $transitionsLimit;
 
         // In charge of recognize automatic state changes on the state machine
         $this->transite();
@@ -99,37 +107,31 @@ class PlayerVsEnemy
 
     protected function checkEnemyNear()
     {
-        $enemy = $this->em->getRepository('PlayerCharacter')->findEnemyNear(
-            $this->playerCharacter->getId(),
-            $this->playerCharacter->getMapZone()
-        );
+        /** @var PlayerCharacter $enemy */
+        $enemy = $this->em->getRepository('AppBundle:PlayerCharacter')
+            ->findEnemyNear(
+                $this->playerCharacter->getId(),
+                $this->playerCharacter->getMapZone()
+            );
 
         if (!empty($enemy)) {
             if ($this->stateMachine->can('enemy_near')) {
                 $this->stateMachine->apply('enemy_near');
 
-                // We store who we are fighting with
-                $this->playerCharacter->setFightingWith($enemy);
-                $enemy->setFightingWith($this->playerCharacter);
-
-                $this->em->persist($this->playerCharacter);
-                $this->em->persist($enemy);
-
-                $this->em->flush();
-
-                // Session
+                $this->actions->fightStarts($this->playerCharacter, $enemy);
+                $this->actions->fightPhase($this->playerCharacter, $enemy);
+                $this->actions->react($enemy);
 
                 $this->transitionsDone++;
 
                 return true;
             }
         } else {
-            // Move to another part of the map
-            $mapZone = $this->em->getRepository('MapZone')->findAnotherMapZone($this->playerCharacter->getMapZone()->getId());
-
-            $this->playerCharacter->setMapZone($mapZone);
-
-            $this->em->persist($this->playerCharacter);
+            $this->session->getFlashBag()->add(
+                'notice',
+                $this->playerCharacter->getName().' did not found enemies on '.$this->playerCharacter->getMapZone()->getName()
+            );
+            $this->actions->move($this->playerCharacter);
         }
 
         return false;
@@ -138,7 +140,7 @@ class PlayerVsEnemy
     protected function checkEnemyOutOfSign()
     {
         /** @var PlayerCharacter $enemyFightingWith */
-        $enemyFightingWith = $this->em->getRepository('PlayerCharacter')->findOneBy(
+        $enemyFightingWith = $this->em->getRepository('AppBundle:PlayerCharacter')->findOneBy(
             ['id' => $this->playerCharacter->getFightingWith()->getId()]
         );
 
@@ -146,8 +148,9 @@ class PlayerVsEnemy
             && $this->stateMachine->can('enemy_out_of_sign')
         ) {
             $this->stateMachine->apply('enemy_out_of_sign');
+            $this->session->getFlashBag()->add('notice', $enemyFightingWith->getName().' is not on the same zone.');
 
-            // Session
+            $this->actions->fightEndsFor($this->playerCharacter);
 
             $this->transitionsDone++;
 
@@ -160,14 +163,17 @@ class PlayerVsEnemy
     protected function checkEnemyAttackBack()
     {
         /** @var PlayerCharacter $enemyFightingWith */
-        $enemyFightingWith = $this->em->getRepository('PlayerCharacter')->findOneBy(
+        $enemyFightingWith = $this->em->getRepository('AppBundle:PlayerCharacter')->findOneBy(
             ['id' => $this->playerCharacter->getFightingWith()->getId()]
         );
 
-        if (!empty($enemyFightingWith) && $enemyFightingWith->getState() == 'attack' && $this->stateMachine->can('enemy_attack_back')) {
+        if (!empty($enemyFightingWith) && $enemyFightingWith->getState() == 'attack' &&
+            $this->stateMachine->can('enemy_attack_back')
+        ) {
             $this->stateMachine->apply('enemy_attack_back');
+            $this->session->getFlashBag()->add('notice', $enemyFightingWith->getName().' attacked back.');
 
-            // Session
+            $this->actions->fightPhase($enemyFightingWith, $this->playerCharacter);
 
             $this->transitionsDone++;
 
@@ -179,12 +185,14 @@ class PlayerVsEnemy
 
     protected function checkEnemyIdle()
     {
-        $enemy = $this->em->getRepository('PlayerCharacter')->findEnemyOnState($this->playerCharacter->getId(), 'find_aid');
+        /** @var PlayerCharacter $enemyFightingWith */
+        $enemyFightingWith = $this->playerCharacter->getFightingWith();
 
-        if (!empty($enemy) && $this->stateMachine->can('enemy_idle')) {
+        if (!empty($enemyFightingWith) && $enemyFightingWith && $this->stateMachine->can('enemy_idle')) {
             $this->stateMachine->apply('enemy_idle');
+            $this->session->getFlashBag()->add('notice', $this->playerCharacter->getName().' attacks because '.$enemyFightingWith->getName().' is idle.');
 
-            // Session
+            $this->actions->fightPhase($this->playerCharacter, $enemyFightingWith);
 
             $this->transitionsDone++;
 
@@ -196,14 +204,16 @@ class PlayerVsEnemy
 
     protected function checkHealthPointsLow()
     {
+        /** @var PlayerCharacter $playerCharacter */
         $playerCharacter = $this->em->getRepository('AppBundle:PlayerCharacter')->findOneBy(['name' => 'Me']);
 
         $percentage = $playerCharacter->getHealth() * 100 / PlayerCharacter::MAX_HEALTH;
 
         if ($percentage <= PlayerCharacter::DANGEROUS_PERCENTAGE && $this->stateMachine->can('healthpoints_low')) {
             $this->stateMachine->apply('healthpoints_low');
+            $this->session->getFlashBag()->add('notice', $this->playerCharacter->getName().' have to retire to find aid.');
 
-            // Session
+            $this->actions->fightEndsFor($playerCharacter->getFightingWith());
 
             $this->transitionsDone++;
 
@@ -215,12 +225,13 @@ class PlayerVsEnemy
 
     protected function checkAidFound()
     {
-        $roll = rand(0, 100);
+        $roll = rand(1, 100);
 
         if ($roll % 3 === 0 && $this->stateMachine->can('aid_found')) {
             $this->stateMachine->apply('aid_found');
+            $this->session->getFlashBag()->add('notice', $this->playerCharacter->getName().' found some medicinal herbs.');
 
-            // Session
+            $this->actions->heal($this->playerCharacter);
 
             $this->transitionsDone++;
 

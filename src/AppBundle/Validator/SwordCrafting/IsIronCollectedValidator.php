@@ -23,7 +23,7 @@ class IsIronCollectedValidator extends ConstraintValidator
     {
         $roll = rand(0, 100);
 
-        if ($roll >= 70) {
+        if ($roll < 70) {
             $this->context->buildViolation($constraint->message)
                 ->addViolation();
         }
