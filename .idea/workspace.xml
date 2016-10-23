@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43fa9fe4-7d54-4732-a310-29c689b0321e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Services/Actions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pieces/header.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pieces/header.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pieces/store.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pieces/store.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pieces/workflows.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pieces/workflows.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/2-LoadPlayerCharacters.php" afterPath="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/2-LoadPlayerCharacters.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/PlayerCharacter.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/PlayerCharacter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/MapZoneRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/MapZoneRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/PlayerCharacterRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/PlayerCharacterRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php" afterPath="$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Services/SwordCrafting.php" afterPath="$PROJECT_DIR$/src/AppBundle/Services/SwordCrafting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollectedValidator.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollectedValidator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearned.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearned.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearnedValidator.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearnedValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Services/Actions.php" afterPath="$PROJECT_DIR$/src/AppBundle/Services/Actions.php" />
     </list>
     <ignored path="phpmad-sm-and-wfn.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,23 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.708334">
-              <caret line="137" column="112" selection-start-line="137" selection-start-column="112" selection-end-line="137" selection-end-column="112" />
-              <folding>
-                <element signature="e#40#66#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="state_machine.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="state_machine.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.75">
-              <caret line="6" column="77" selection-start-line="6" selection-start-column="77" selection-end-line="6" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.9939759">
+              <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -114,14 +88,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Actions.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Actions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/Actions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43485087">
-              <caret line="160" column="5" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
+            <state vertical-scroll-proportion="-10.725491">
+              <caret line="163" column="43" selection-start-line="163" selection-start-column="43" selection-end-line="163" selection-end-column="43" />
               <folding>
                 <element signature="e#120#150#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/pieces/header.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.75">
+              <caret line="30" column="21" selection-start-line="7" selection-start-column="16" selection-end-line="30" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -191,19 +175,19 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBought.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/pieces/store.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/MapZoneRepository.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pieces/header.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pieces/workflows.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearned.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Services/SwordCrafting.php" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/PlayerCharacter.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearnedValidator.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollectedValidator.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/PlayerCharacterRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/2-LoadPlayerCharacters.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pieces/header.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Services/Actions.php" />
       </list>
     </option>
@@ -277,6 +261,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpmad-sm-and-wfn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpmad-sm-and-wfn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -679,14 +681,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="102" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/workflows.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -957,14 +951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pieces/header.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375">
-          <caret line="15" column="24" selection-start-line="12" selection-start-column="20" selection-end-line="15" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/HasBeenTaughtValidator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43644717">
@@ -1071,14 +1057,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="6" column="77" selection-start-line="6" selection-start-column="77" selection-end-line="6" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-56.416668">
@@ -1095,13 +1073,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/images/attack.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pieces/header.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.75">
+          <caret line="30" column="21" selection-start-line="7" selection-start-column="16" selection-end-line="30" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/Actions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43485087">
-          <caret line="160" column="5" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
+        <state vertical-scroll-proportion="-10.725491">
+          <caret line="163" column="43" selection-start-line="163" selection-start-column="43" selection-end-line="163" selection-end-column="43" />
           <folding>
             <element signature="e#120#150#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9939759">
+          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

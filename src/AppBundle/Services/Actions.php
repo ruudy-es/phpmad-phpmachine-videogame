@@ -146,12 +146,14 @@ class Actions
 
         if ($roll > 50) {
             $defender->setHealth($defender->getHealth() - $damage);
+
+            $this->session->getFlashBag()->add('notice', 'During fight phase, '.$defender->getName().' had loose '.($attacker->getAttack() - $defender->getDefense()).' health points');
+        } else {
+            $this->session->getFlashBag()->add('notice', 'During fight phase, '.$attacker->getName().' missed the attack');
         }
 
         $this->em->persist($defender);
         $this->em->flush();
-
-        $this->session->getFlashBag()->add('notice', 'During fight phase, '.$defender->getName().' had loose '.($attacker->getAttack() - $defender->getDefense()).' health points');
     }
 
     /**
