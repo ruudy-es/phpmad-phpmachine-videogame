@@ -1,18 +1,17 @@
 <div class="col-sm-6">
     <h4>Trainer</h4>
     <div class="row">
-        <div class="col-sm-6">
-            <a href="#">
-                <img width="44px" src="{{ asset('images/weaponsmith.png') }}">
-            </a>
-            20 <img width="22px" src="{{ asset('images/gold.png') }}">
-        </div>
-        <div class="col-sm-6">
-            <a href="#">
-                <img width="44px" src="{{ asset('images/armorsmith.png') }}">
-            </a>
-            60 <img width="22px" src="{{ asset('images/gold.png') }}">
-        </div>
+        {% for trade_skill in trade_skills %}
+            <div class="col-sm-6">
+                <form method="post" action="{{ path('train') }}" class="pull-left">
+                    <input type="hidden" name="trade_skill_id" value="{{ trade_skill.id }}">
+                    <button type="submit" class="btn btn-link">
+                        <img width="44px" src="{{ asset('images/' ~ trade_skill.name ~ '.png') }}">
+                        {{ trade_skill.cost }} <img width="22px" src="{{ asset('images/gold.png') }}">
+                    </button>
+                </form>
+            </div>
+        {% endfor %}
     </div>
 </div>
 

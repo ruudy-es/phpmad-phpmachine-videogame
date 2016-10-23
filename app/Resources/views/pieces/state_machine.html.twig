@@ -1,7 +1,18 @@
 <div class="col-sm-12">
     <h4>Me vs Enemy</h4>
 
+    <div class="row">
+        <button type="button" class="btn btn-default">1 Move</button>
+        <button type="button" disabled class="btn btn-default">3 Moves</button>
+        <button type="button" disabled class="btn btn-default">5 Moves</button>
+    </div>
+
     <img width="100%" src="{{ asset('images/' ~ player_character.state ~'.png') }}">
 
-    <h5>History</h5>
+    <h4>Console</h4>
+    <ul>
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+            <li>{{ flashMessage }}</li>
+        {% endfor %}
+    </ul>
 </div>

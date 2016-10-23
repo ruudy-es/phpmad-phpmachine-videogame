@@ -4,22 +4,33 @@ parameters:
 #    parameter_name: value
 
 services:
+    weapon_crafting:
+        class: AppBundle\Services\SwordCrafting
+        arguments:
+          - '@workflow.weapon_crafting'
+          - '@validator'
+          - '@session'
     validator.weapon_crafting.has_been_taught:
-        class: AppBundle\Validator\WeaponCrafting\HasBeenTaughtValidator
+        class: AppBundle\Validator\SwordCrafting\HasBeenTaughtValidator
         arguments:
           - "@doctrine.orm.default_entity_manager"
         tags:
           - { name: validator.constraint_validator, alias: weapon_crafting_has_been_taught_validator }
     validator.weapon_crafting.is_recipe_learned:
-        class: AppBundle\Validator\WeaponCrafting\IsRecipeLearnedValidator
+        class: AppBundle\Validator\SwordCrafting\IsRecipeLearnedValidator
         tags:
           - { name: validator.constraint_validator, alias: weapon_crafting_is_recipe_learned_validator }
     validator.weapon_crafting.is_iron_collected:
-        class: AppBundle\Validator\WeaponCrafting\IsIronCollectedValidator
+        class: AppBundle\Validator\SwordCrafting\IsIronCollectedValidator
         tags:
           - { name: validator.constraint_validator, alias: weapon_crafting_is_iron_collected_validator }
     validator.weapon_crafting.is_leather_bought:
-        class: AppBundle\Validator\WeaponCrafting\IsLeatherboughtValidator
+        class: AppBundle\Validator\SwordCrafting\IsLeatherboughtValidator
         tags:
           - { name: validator.constraint_validator, alias: weapon_crafting_is_leather_bought_validator }
+    player_vs_enemy:
+        class: AppBundle\Services\PlayerVsEnemy
+        arguments:
+          - '@sm.factory'
+          - '@doctrine.orm.default_entity_manager'
 

@@ -3,15 +3,15 @@
  * Created by PhpStorm.
  * User: ruudy
  * Date: 19/10/16
- * Time: 14:30
+ * Time: 14:29
  */
 
-namespace AppBundle\Validator\WeaponCrafting;
+namespace AppBundle\Validator\SwordCrafting;
 
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Constraint;
 
-class IsLeatherBoughtValidator extends ConstraintValidator
+class IsIronCollectedValidator extends ConstraintValidator
 {
     /**
      * Checks if the passed value is valid.

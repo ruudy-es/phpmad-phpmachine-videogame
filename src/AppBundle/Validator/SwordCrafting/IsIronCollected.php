@@ -6,7 +6,7 @@
  * Time: 14:29
  */
 
-namespace AppBundle\Validator\WeaponCrafting;
+namespace AppBundle\Validator\SwordCrafting;
 
 use Symfony\Component\Validator\Constraint;
 

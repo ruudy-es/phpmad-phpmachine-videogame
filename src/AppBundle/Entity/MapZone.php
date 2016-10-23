@@ -2,16 +2,15 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * TradeSkill
+ * MapZone
  *
- * @ORM\Table(name="trade_skills")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\TradeSkillRepository")
+ * @ORM\Table(name="map_zone")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\MapZoneRepository")
  */
-class TradeSkill
+class MapZone
 {
     /**
      * @var int
@@ -28,13 +27,6 @@ class TradeSkill
      * @ORM\Column(name="name", type="string", length=45)
      */
     private $name;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="cost", type="integer")
-     */
-    private $cost;
 
     /**
      * Set id
@@ -65,25 +57,11 @@ class TradeSkill
      *
      * @param string $name
      *
-     * @return TradeSkill
+     * @return MapZone
      */
     public function setName($name)
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Set cost
-     *
-     * @param int $cost
-     *
-     * @return TradeSkill
-     */
-    public function setCost($cost)
-    {
-        $this->cost = $cost;
 
         return $this;
     }
@@ -97,14 +75,5 @@ class TradeSkill
     {
         return $this->name;
     }
-
-    /**
-     * Get cost
-     *
-     * @return int
-     */
-    public function getCost()
-    {
-        return $this->cost;
-    }
 }
+

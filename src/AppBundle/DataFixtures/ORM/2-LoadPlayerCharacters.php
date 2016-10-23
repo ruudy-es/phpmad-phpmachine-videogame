@@ -9,6 +9,7 @@
 
 namespace AppBundle\DataFixtures\ORM;
 
+use AppBundle\Entity\MapZone;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -18,24 +19,36 @@ class LoadPlayerCharacters extends AbstractFixture implements OrderedFixtureInte
 {
     public function load(ObjectManager $manager)
     {
+        /** @var MapZone $winterfell */
+        $winterfell = $manager->find('AppBundle:MapZone', 1);
+        /** @var MapZone $kingLanding */
+        $kingLanding = $manager->find('AppBundle:MapZone', 2);
+
         $me = new PlayerCharacter();
+        $me->setId(1);
+        $metadata = $manager->getClassMetadata(get_class($me));
+        $metadata->setIdGenerator(new \Doctrine\ORM\Id\AssignedGenerator());
+        $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetadata::GENERATOR_TYPE_NONE);
+        $me->setMapZone($winterfell);
         $me->setName('Me');
         $me->setGold(100);
         $me->setHealth(100);
         $me->setAttack(30);
         $me->setDefense(20);
 
-        $manager->persist($me);
-
-        $this->addReference('me', $me);
-
         $enemy = new PlayerCharacter();
+        $enemy->setId(2);
+        $metadata = $manager->getClassMetadata(get_class($enemy));
+        $metadata->setIdGenerator(new \Doctrine\ORM\Id\AssignedGenerator());
+        $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetadata::GENERATOR_TYPE_NONE);
+        $enemy->setMapZone($kingLanding);
         $enemy->setName('Enemy');
         $enemy->setGold(0);
         $enemy->setHealth(100);
         $enemy->setAttack(40);
         $enemy->setDefense(30);
 
+        $manager->persist($me);
         $manager->persist($enemy);
 
         $manager->flush();
@@ -43,6 +56,6 @@ class LoadPlayerCharacters extends AbstractFixture implements OrderedFixtureInte
 
     public function getOrder()
     {
-        return 1;
+        return 2;
     }
 }

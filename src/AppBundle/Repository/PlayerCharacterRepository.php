@@ -16,18 +16,58 @@ class PlayerCharacterRepository extends \Doctrine\ORM\EntityRepository
      *
      * @return bool
      */
-    public function hasRequiredTradeSkill($playerCharacterId, $tradeSkillId)
+    public function hasTradeSkill($playerCharacterId, $tradeSkillId)
     {
-         $result = $this->createQueryBuilder('pc')
-             ->select('count(distinct(pc.id))')
+         $found = $this->createQueryBuilder('pc')
+             ->select('pc.id')
              ->innerJoin('pc.tradeSkills', 'ts')
              ->where('pc.id = :player_character_id')
                  ->setParameter('player_character_id', $playerCharacterId)
              ->andWhere('ts.id = :trade_skill_id')
                  ->setParameter('trade_skill_id', $tradeSkillId)
              ->getQuery()
-             ->getSingleScalarResult();
+             ->getResult();
 
-        return ($result > 0);
+        return !empty($found);
+    }
+
+    /**
+     * @param $playerCharacterId
+     * @param $playerzone
+     *
+     * @return mixed
+     */
+    public function findEnemyNear($playerCharacterId, $playerzone)
+    {
+        $enemies = $this->createQueryBuilder('pc')
+            ->where('pc.id <> :player_character_id')
+                ->setParameter('player_character_id', $playerCharacterId)
+            ->andWhere('pc.health <> 0')
+            ->andWhere('pc.mapZone = :map_zone')
+                ->setParameter('map_zone', $playerzone)
+            ->getQuery()
+            ->getResult();
+
+        return array_rand($enemies, 1);
+    }
+
+    /**
+     * @param $playerCharacterId
+     * @param $state
+     *
+     * @return mixed
+     */
+    public function findEnemyOnState($playerCharacterId, $state)
+    {
+        $enemies = $this->createQueryBuilder('pc')
+            ->where('pc.id <> :player_character_id')
+                ->setParameter('player_character_id', $playerCharacterId)
+            ->where('pc.state = :state')
+                ->setParameter('state', $state)
+            ->andWhere('pc.health <> 0')
+            ->getQuery()
+            ->getResult();
+
+        return array_rand($enemies, 1);
     }
 }

@@ -13,6 +13,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class PlayerCharacter
 {
+    const MAX_HEALTH = 100;
+    const DANGEROUS_PERCENTAGE = 40;
+
     /**
      * @var int
      *
@@ -41,7 +44,7 @@ class PlayerCharacter
      *
      * @ORM\Column(name="health", type="integer")
      */
-    private $health = 100;
+    private $health = PlayerCharacter::MAX_HEALTH;
 
     /**
      * @var int
@@ -78,9 +81,35 @@ class PlayerCharacter
      */
     private $tradeSkills;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="MapZone")
+     * @ORM\JoinColumn(name="map_zone_id", referencedColumnName="id")
+     */
+    private $mapZone;
+
+    /**
+     * @ORM\OneToOne(targetEntity="PlayerCharacter")
+     * @ORM\JoinColumn(name="fighting_with_id", referencedColumnName="id")
+     */
+    private $fightingWith;
+
     public function __construct() {
         $this->items = new ArrayCollection();
         $this->tradeSkills = new ArrayCollection();
+    }
+
+    /**
+     * Set id
+     *
+     * @param $id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     /**
@@ -268,6 +297,72 @@ class PlayerCharacter
     public function getItems()
     {
         return $this->items;
+    }
+
+    /**
+     * @param TradeSkill $tradeSkill
+     */
+    public function addTradeSkill(TradeSkill $tradeSkill)
+    {
+        $this->tradeSkills[] = $tradeSkill;
+
+        return $this;
+    }
+
+    /**
+     * @param TradeSkill $tradeSkill
+     */
+    public function removeTradeSkill(TradeSkill $tradeSkill)
+    {
+        $this->tradeSkills->removeElement($tradeSkill);
+    }
+
+    /**
+     * Set MapZone
+     *
+     * @param MapZone $mapZone
+     *
+     * @return PlayerCharacter
+     */
+    public function setMapZone(MapZone $mapZone)
+    {
+        $this->mapZone = $mapZone;
+
+        return $this;
+    }
+
+    /**
+     * Get MapZone
+     *
+     * @return MapZone
+     */
+    public function getMapZone()
+    {
+        return $this->mapZone;
+    }
+
+    /**
+     * Set PlayerCharacter
+     *
+     * @param PlayerCharacter $playerCharacter
+     *
+     * @return PlayerCharacter
+     */
+    public function setFightingWith(PlayerCharacter $playerCharacter)
+    {
+        $this->fightingWith = $playerCharacter;
+
+        return $this;
+    }
+
+    /**
+     * Get PlayerCharacter
+     *
+     * @return PlayerCharacter
+     */
+    public function getFightingWith()
+    {
+        return $this->fightingWith;
     }
 }
 

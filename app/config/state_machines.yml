@@ -24,9 +24,9 @@ winzou_state_machine:
             enemy_idle:
                 from: [evade]
                 to: attack
-            helthpoints_low:
+            healthpoints_low:
                 from: [evade]
                 to: find_aid
-            bandaged:
+            aid_found:
                 from: [find_aid]
                 to: wander

@@ -6,7 +6,7 @@
  * Time: 14:15
  */
 
-namespace AppBundle\Validator\WeaponCrafting;
+namespace AppBundle\Validator\SwordCrafting;
 
 use AppBundle\Entity\Item;
 use Doctrine\ORM\EntityManager;
@@ -35,8 +35,8 @@ class HasBeenTaughtValidator extends ConstraintValidator
      */
     public function validate($item, Constraint $constraint)
     {
-        if (!$this->em->getRepository('PlayerCharacter')
-            ->hasRequiredTradeSkill(
+        if (!$this->em->getRepository('AppBundle:PlayerCharacter')
+            ->hasTradeSkill(
                 $item->getPlayerCharacter()->getId(),
                 $item->getTradeSkill()->getId()
             )
