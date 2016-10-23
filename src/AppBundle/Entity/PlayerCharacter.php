@@ -74,12 +74,21 @@ class PlayerCharacter
 
     /**
      * @ORM\ManyToMany(targetEntity="TradeSkill")
-     * @ORM\JoinTable(name="player_haracters_trade_skills",
+     * @ORM\JoinTable(name="player_character_trade_skills",
      *      joinColumns={@ORM\JoinColumn(name="player_character_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="trade_skill_id", referencedColumnName="id")}
      *      )
      */
     private $tradeSkills;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Material")
+     * @ORM\JoinTable(name="player_character_materials",
+     *      joinColumns={@ORM\JoinColumn(name="player_character_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="material_id", referencedColumnName="id")}
+     *      )
+     */
+    private $materials;
 
     /**
      * @ORM\ManyToOne(targetEntity="MapZone")
@@ -96,6 +105,7 @@ class PlayerCharacter
     public function __construct() {
         $this->items = new ArrayCollection();
         $this->tradeSkills = new ArrayCollection();
+        $this->materials = new ArrayCollection();
     }
 
     /**
@@ -300,7 +310,19 @@ class PlayerCharacter
     }
 
     /**
+     * Get tradeskills
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTradeSkills()
+    {
+        return $this->tradeSkills;
+    }
+
+    /**
      * @param TradeSkill $tradeSkill
+     *
+     * @return PlayerCharacter
      */
     public function addTradeSkill(TradeSkill $tradeSkill)
     {
@@ -315,6 +337,26 @@ class PlayerCharacter
     public function removeTradeSkill(TradeSkill $tradeSkill)
     {
         $this->tradeSkills->removeElement($tradeSkill);
+    }
+
+    /**
+     * @param Material $material
+     *
+     * @return PlayerCharacter
+     */
+    public function addMaterial(Material $material)
+    {
+        $this->materials[] = $material;
+
+        return $this;
+    }
+
+    /**
+     * @param Material $material
+     */
+    public function removeMaterial(Material $material)
+    {
+        $this->materials->removeElement($material);
     }
 
     /**

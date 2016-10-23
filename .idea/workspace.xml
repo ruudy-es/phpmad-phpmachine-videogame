@@ -2,47 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43fa9fe4-7d54-4732-a310-29c689b0321e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/1-LoadMapZones.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/MapZone.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/MapZoneRepository.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/EventListener/WeaponCraftingGuardListener.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/learning_recipe_collecting_iron_asking_for_leather.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/learning_recipe_collecting_iron_leather_ready.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/learning_recipe_iron_ready_asking_for_leather.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/learning_recipe_iron_ready_leather_ready.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/recipe_known_collecting_iron_asking_for_leather.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/recipe_known_iron_ready_asking_form_leather.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/recipe_known_iron_ready_leather_ready.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/1-LoadPlayerCharacters.php" afterPath="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/2-LoadPlayerCharacters.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/2-LoadTradeSkills.php" afterPath="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/3-LoadTradeSkills.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/3-LoadItems.php" afterPath="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/4-LoadItems.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Services/WeaponCrafting.php" afterPath="$PROJECT_DIR$/src/AppBundle/Services/SwordCrafting.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/WeaponCrafting/HasBeenTaught.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/HasBeenTaught.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/WeaponCrafting/HasBeenTaughtValidator.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/HasBeenTaughtValidator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/WeaponCrafting/IsIronCollected.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollected.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/WeaponCrafting/IsIronCollectedValidator.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollectedValidator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/WeaponCrafting/IsLeatherBought.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBought.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/WeaponCrafting/IsLeatherBoughtValidator.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBoughtValidator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/WeaponCrafting/IsRecipeLearned.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearned.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/WeaponCrafting/IsRecipeLearnedValidator.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearnedValidator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/attack.png" afterPath="$PROJECT_DIR$/web/images/attack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/evade.png" afterPath="$PROJECT_DIR$/web/images/evade.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/find_aid.png" afterPath="$PROJECT_DIR$/web/images/find_aid.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/images/wander.png" afterPath="$PROJECT_DIR$/web/images/wander.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/5-LoadMaterials.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Material.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/MaterialRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/game.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/game.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pieces/header.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pieces/header.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pieces/store.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pieces/store.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pieces/workflows.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pieces/workflows.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/state_machines.yml" afterPath="$PROJECT_DIR$/app/config/state_machines.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Item.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Item.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/PlayerCharacter.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/PlayerCharacter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Tradeskill.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Tradeskill.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/PlayerCharacterRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/PlayerCharacterRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php" afterPath="$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Services/SwordCrafting.php" afterPath="$PROJECT_DIR$/src/AppBundle/Services/SwordCrafting.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollected.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollected.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollectedValidator.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollectedValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBought.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBought.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBoughtValidator.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBoughtValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearnedValidator.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearnedValidator.php" />
     </list>
     <ignored path="phpmad-sm-and-wfn.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,17 +44,17 @@
             <entry file="file://$PROJECT_DIR$/app/config/workflows.yml">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="32" column="30" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="30" />
+                  <caret line="15" column="36" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SwordCrafting.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SwordCrafting.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/SwordCrafting.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.14529915">
-                  <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+                <state vertical-scroll-proportion="-7.625">
+                  <caret line="158" column="17" selection-start-line="158" selection-start-column="17" selection-end-line="158" selection-end-column="17" />
                   <folding>
                     <element signature="e#119#145#0#PHP" expanded="true" />
                   </folding>
@@ -88,12 +62,34 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="state_machine.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig">
+          <file leaf-file-name="Item.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Item.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.625">
-                  <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+                <state vertical-scroll-proportion="-4.375">
+                  <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PlayerCharacter.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PlayerCharacter.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-17.0">
+                  <caret line="313" column="6" selection-start-line="313" selection-start-column="6" selection-end-line="313" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.51754385">
+                  <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+                  <folding>
+                    <element signature="e#40#66#0#PHP" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -102,11 +98,8 @@
             <entry file="file://$PROJECT_DIR$/app/config/services.yml">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-                  <folding>
-                    <marker date="1477180852000" expanded="true" signature="173:344" placeholder="weapon_crafting:" />
-                    <marker date="1477180852000" expanded="true" signature="246:344" placeholder="arguments:" />
-                  </folding>
+                  <caret line="27" column="59" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -118,30 +111,40 @@
           <file leaf-file-name="PlayerCharacterRepository.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/PlayerCharacterRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-18.75">
-                  <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+                <state vertical-scroll-proportion="-12.5">
+                  <caret line="39" column="31" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+          <file leaf-file-name="store.html.twig" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Resources/views/pieces/store.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.36039886">
-                  <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+                <state vertical-scroll-proportion="0.37280703">
+                  <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="IsLeatherBoughtValidator.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBoughtValidator.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-21.625">
+                  <caret line="43" column="64" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
                   <folding>
-                    <element signature="e#40#66#0#PHP" expanded="true" />
+                    <element signature="e#133#163#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PlayerCharacter.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PlayerCharacter.php">
+          <file leaf-file-name="IsLeatherBought.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBought.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-17.416666">
-                  <caret line="290" column="0" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
+                <state vertical-scroll-proportion="-13.125">
+                  <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -150,8 +153,8 @@
           <file leaf-file-name="HasBeenTaughtValidator.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/HasBeenTaughtValidator.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.625">
-                  <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+                <state vertical-scroll-proportion="-18.125">
+                  <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="46" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -167,8 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/LoadItems.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/LoadPlayerCharacters.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/1-LoadPlayerCharacters.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/PlayerVsEnemy/isRequiredTradeSkillLearned.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/WeaponCrafting/isRequiredTradeSkillLearned.php" />
@@ -193,30 +194,32 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/MapZoneRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/TradeSkill.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/MapZone.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Item.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/1-LoadMapZones.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/3-LoadTradeSkills.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/2-LoadPlayerCharacters.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/4-LoadItems.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/pieces/header.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pieces/store.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pieces/workflows.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/WeaponCrafting/HasBeenTaughtValidator.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/PlayerCharacterRepository.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/PlayerCharacter.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Services/WeaponCrafting.php" />
-        <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/HasBeenTaught.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearned.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/HasBeenTaughtValidator.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollected.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollectedValidator.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBought.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBoughtValidator.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearned.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearnedValidator.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/HasBeenTaughtValidator.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/5-LoadMaterials.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Material.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/PlayerCharacterRepository.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Item.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/PlayerCharacter.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pieces/store.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pieces/workflows.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBoughtValidator.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBought.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Services/SwordCrafting.php" />
+        <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
       </list>
     </option>
@@ -231,10 +234,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-322" />
-    <option name="y" value="-1057" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="828" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -507,6 +509,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="DataFixtures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ORM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpmad-sm-and-wfn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpmad-sm-and-wfn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -603,6 +631,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="SearchEverywhereHistoryKey" value="service&#9;FILE&#9;file:///Users/ruudy/Sites/phpmad-sm-and-wfn/app/config/services.yml&#10;has&#9;FILE&#9;file:///Users/ruudy/Sites/phpmad-sm-and-wfn/src/AppBundle/Validator/SwordCrafting/HasBeenTaughtValidator.php&#10;isle&#9;FILE&#9;file:///Users/ruudy/Sites/phpmad-sm-and-wfn/src/AppBundle/Validator/SwordCrafting/IsLeatherBoughtValidator.php&#10;workf&#9;FILE&#9;file:///Users/ruudy/Sites/phpmad-sm-and-wfn/app/Resources/views/pieces/workflows.html.twig&#10;PlayerC&#9;FILE&#9;file:///Users/ruudy/Sites/phpmad-sm-and-wfn/src/AppBundle/Entity/PlayerCharacter.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -670,18 +699,27 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-322" y="-1057" width="1920" height="1057" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="828" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20127796" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21244635" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953367" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3624454" sideWeight="0.5021299" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2580311" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21865284" sideWeight="0.4978701" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21865284" sideWeight="0.4978701" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -728,14 +766,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PlayerCharacter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -899,14 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0833334">
-          <caret line="128" column="20" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/1-LoadMapZones.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28097984">
@@ -960,14 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.8258488">
-          <caret line="180" column="5" selection-start-line="180" selection-start-column="5" selection-end-line="180" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.1280683">
@@ -984,97 +998,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pieces/workflows.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.065717414">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/4-LoadItems.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4403067">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="30" />
-          <folding>
-            <element signature="e#7#86#0#PHP" expanded="true" />
-            <element signature="e#127#164#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/pieces/store.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="6" column="92" selection-start-line="6" selection-start-column="92" selection-end-line="6" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PlayerCharacter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.416666">
-          <caret line="290" column="0" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-          <folding>
-            <marker date="1477180852000" expanded="true" signature="173:344" placeholder="weapon_crafting:" />
-            <marker date="1477180852000" expanded="true" signature="246:344" placeholder="arguments:" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollectedValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.875">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBought.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.875">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBoughtValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.875">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearned.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.875">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearnedValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.875">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-          <folding>
-            <element signature="e#133#185#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollected.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04928806">
           <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
           <folding />
         </state>
@@ -1088,54 +1014,172 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/HasBeenTaughtValidator.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.55128205">
+          <caret line="217" column="29" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollected.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1923077">
+          <caret line="14" column="88" selection-start-line="14" selection-start-column="88" selection-end-line="14" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/5-LoadMaterials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21367522">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding>
+            <element signature="e#128#158#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearnedValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3846154">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/4-LoadItems.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.054131053">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="15" selection-end-column="46" />
+          <folding>
+            <element signature="e#7#86#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Material.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.017361112">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.375">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.625">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        <state vertical-scroll-proportion="-6.875">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollectedValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48245615">
+          <caret line="28" column="9" selection-start-line="25" selection-start-column="8" selection-end-line="28" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pieces/workflows.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/HasBeenTaughtValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.125">
+          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="46" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/PlayerCharacterRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBought.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsLeatherBoughtValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.625">
+          <caret line="43" column="64" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
+          <folding>
+            <element signature="e#133#163#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/workflows.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="30" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="30" />
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/SwordCrafting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.625">
+          <caret line="158" column="17" selection-start-line="158" selection-start-column="17" selection-end-line="158" selection-end-column="17" />
+          <folding>
+            <element signature="e#119#145#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="59" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PlayerCharacter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.0">
+          <caret line="313" column="6" selection-start-line="313" selection-start-column="6" selection-end-line="313" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pieces/store.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37280703">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36039886">
-          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.51754385">
+          <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
           <folding>
             <element signature="e#40#66#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/SwordCrafting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14529915">
-          <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
-          <folding>
-            <element signature="e#119#145#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

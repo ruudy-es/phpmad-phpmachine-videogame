@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraint;
 
 class IsLeatherBought extends Constraint
 {
-    public $message = '';
+    public $message = 'The leather required for the sword is not bought yet';
 
     public function getTargets()
     {

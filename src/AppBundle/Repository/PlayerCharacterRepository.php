@@ -33,6 +33,27 @@ class PlayerCharacterRepository extends \Doctrine\ORM\EntityRepository
 
     /**
      * @param $playerCharacterId
+     * @param $materialId
+     *
+     * @return bool
+     */
+    public function hasMaterial($playerCharacterId, $materialId)
+    {
+        $found = $this->createQueryBuilder('pc')
+            ->select('pc.id')
+            ->innerJoin('pc.materials', 'm')
+            ->where('pc.id = :player_character_id')
+            ->setParameter('player_character_id', $playerCharacterId)
+            ->andWhere('m.id = :material_id')
+            ->setParameter('material_id', $materialId)
+            ->getQuery()
+            ->getResult();
+
+        return !empty($found);
+    }
+
+    /**
+     * @param $playerCharacterId
      * @param $playerzone
      *
      * @return mixed

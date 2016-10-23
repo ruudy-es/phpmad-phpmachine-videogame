@@ -8,19 +8,41 @@
 
 namespace AppBundle\Validator\SwordCrafting;
 
+use AppBundle\Entity\Material;
+use Doctrine\ORM\EntityManager;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Constraint;
 
 class IsLeatherBoughtValidator extends ConstraintValidator
 {
+    protected $em;
+
+    /**
+     * HasBeenTaughtValidator constructor.
+     *
+     * @param EntityManager $em
+     */
+    public function __construct(EntityManager $em)
+    {
+        $this->em = $em;
+    }
+
     /**
      * Checks if the passed value is valid.
      *
-     * @param mixed $value The value that should be validated
+     * @param Item $item The value that should be validated
      * @param Constraint $constraint The constraint for the validation
      */
-    public function validate($value, Constraint $constraint)
+    public function validate($item, Constraint $constraint)
     {
-        // TODO: Implement validate() method.
+        if (!$this->em->getRepository('AppBundle:PlayerCharacter')
+            ->hasMaterial(
+                $item->getPlayerCharacter()->getId(),
+                1 // @TODO table between items and materials (required_materials)
+            )
+        ) {
+            $this->context->buildViolation($constraint->message)
+                ->addViolation();
+        }
     }
 }

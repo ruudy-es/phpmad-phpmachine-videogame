@@ -77,6 +77,10 @@ class SwordCrafting
         if ($marking->has('collecting_iron')) {
             $this->checkIronIsCollected();
         }
+
+        if ($marking->has('asking_for_leather')) {
+            $this->checkLeatherBought();
+        }
     }
 
     /**
@@ -93,10 +97,10 @@ class SwordCrafting
 
                 $this->session->getFlashBag()->add('notice', 'The Player adquired the needed Trade Skill to buil a Sword');
             } else {
-                $this->session->getFlashBag()->add('notice', 'The Player should adquire the needed Trade Skill to buil a Sword');
+//                $this->session->getFlashBag()->add('notice', 'The Player should adquire the needed Trade Skill to buil a Sword');
+                $this->fetchErrorsIntoSession($errors, 'notice');
             }
         }
-        // Store messages on flashBag, whatever...
     }
 
     protected function checkRecipeLearned()
@@ -112,10 +116,11 @@ class SwordCrafting
 
                 $this->craft();
             } catch (ExceptionInterface $e) {
-                $this->session->getFlashBag()->add('danger', $e->getMessage());
+                $this->session->getFlashBag()->add('error', $e->getMessage());
             }
         } else {
-            $this->session->getFlashBag()->add('notice', 'The Player need to lear the recipe to build the Sword.');
+//            $this->session->getFlashBag()->add('notice', 'The Player need to lear the recipe to build the Sword.');
+            $this->fetchErrorsIntoSession($errors, 'notice');
         }
     }
 
@@ -132,10 +137,11 @@ class SwordCrafting
 
                 $this->craft();
             } catch (ExceptionInterface $e) {
-                $this->session->getFlashBag()->add('danger', $e->getMessage());
+                $this->session->getFlashBag()->add('error', $e->getMessage());
             }
         } else {
-            $this->session->getFlashBag()->add('notice', 'The Player should collect the iron needed for the Sword.');
+//            $this->session->getFlashBag()->add('notice', 'The Player should collect the iron needed for the Sword.');
+            $this->fetchErrorsIntoSession($errors, 'notice');
         }
     }
 
@@ -144,23 +150,24 @@ class SwordCrafting
      *
      * @param Item $item
      */
-    public function leatherBought(Item $item)
+    public function checkLeatherBought()
     {
         // Do it like this on purpose, teaching reasons (Avoid events)
-        $errors = $this->validateConstraint($item, new IsLeatherBought());
+        $errors = $this->validateConstraint($this->item, new IsLeatherBought());
 
         if (count($errors) == 0) {
             try {
-                $this->workflowComponent->apply($item, 'leather_bought');
+                $this->workflowComponent->apply($this->item, 'leather_bought');
 
                 $this->session->getFlashBag()->add('notice', 'The Player bought the leather needed for the Sword.');
 
                 $this->craft();
             } catch (ExceptionInterface $e) {
-                $this->session->getFlashBag()->add('danger', $e->getMessage());
+                $this->session->getFlashBag()->add('error', $e->getMessage());
             }
         } else {
-            $this->session->getFlashBag()->add('notice', 'The Player need to buy the leather needed for the Sword.');
+//            $this->session->getFlashBag()->add('notice', 'The Player need to buy the leather needed for the Sword.');
+            $this->fetchErrorsIntoSession($errors, 'notice');
         }
     }
 
@@ -171,7 +178,7 @@ class SwordCrafting
 
             $this->session->getFlashBag()->add('notice', 'The Player started crafting the Sword!!!');
         } catch (ExceptionInterface $e) {
-            $this->session->getFlashBag()->add('danger', $e->getMessage());
+            $this->session->getFlashBag()->add('error', $e->getMessage());
         }
     }
 
@@ -182,7 +189,7 @@ class SwordCrafting
 
             $this->session->getFlashBag()->add('notice', 'The Player crafted a Sword!!!');
         } catch (ExceptionInterface $e) {
-            $this->session->getFlashBag()->add('danger', $e->getMessage());
+            $this->session->getFlashBag()->add('error', $e->getMessage());
         }
     }
 

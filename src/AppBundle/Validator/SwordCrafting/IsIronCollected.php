@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraint;
 
 class IsIronCollected extends Constraint
 {
-    public $message = '';
+    public $message = 'You was not lucky on this try, you did not found any iron around.';
 
     public function getTargets()
     {

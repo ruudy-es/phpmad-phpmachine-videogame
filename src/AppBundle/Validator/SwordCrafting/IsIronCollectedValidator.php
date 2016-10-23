@@ -16,11 +16,16 @@ class IsIronCollectedValidator extends ConstraintValidator
     /**
      * Checks if the passed value is valid.
      *
-     * @param mixed $value The value that should be validated
+     * @param Item $item The value that should be validated
      * @param Constraint $constraint The constraint for the validation
      */
-    public function validate($value, Constraint $constraint)
+    public function validate($item, Constraint $constraint)
     {
-        // TODO: Implement validate() method.
+        $roll = rand(0, 100);
+
+        if ($roll >= 70) {
+            $this->context->buildViolation($constraint->message)
+                ->addViolation();
+        }
     }
 }

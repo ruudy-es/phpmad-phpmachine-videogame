@@ -25,7 +25,9 @@ services:
         tags:
           - { name: validator.constraint_validator, alias: weapon_crafting_is_iron_collected_validator }
     validator.weapon_crafting.is_leather_bought:
-        class: AppBundle\Validator\SwordCrafting\IsLeatherboughtValidator
+        class: AppBundle\Validator\SwordCrafting\IsLeatherBoughtValidator
+        arguments:
+          - "@doctrine.orm.default_entity_manager"
         tags:
           - { name: validator.constraint_validator, alias: weapon_crafting_is_leather_bought_validator }
     player_vs_enemy:
