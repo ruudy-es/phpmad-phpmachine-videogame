@@ -63,10 +63,10 @@ class PlayerVsEnemy
         $this->transitionsLimit = $transitionsLimit;
 
         // In charge of recognize automatic state changes on the state machine
-        $this->transite();
+        $this->decide();
     }
 
-    public function transite()
+    public function decide()
     {
         // Did this on purpose, teaching reasons (Avoid iterations)
         switch ($this->stateMachine->getState()) {
@@ -101,7 +101,7 @@ class PlayerVsEnemy
         }
 
         if ($this->transitionsDone < $this->transitionsLimit) {
-            $this->transite();
+            $this->decide();
         }
     }
 
@@ -226,8 +226,14 @@ class PlayerVsEnemy
     protected function checkAidFound()
     {
         $roll = rand(1, 100);
+        $this->session->getFlashBag()->add('notice', 'Rolled a '.$roll.' finding aid');
 
-        if ($roll % 3 === 0 && $this->stateMachine->can('aid_found')) {
+        var_dump($roll);
+        var_dump($roll % 3);
+        var_dump($roll % 3 === 0);
+        die();
+
+        if ($roll % 3 == 0 && $this->stateMachine->can('aid_found')) {
             $this->stateMachine->apply('aid_found');
             $this->session->getFlashBag()->add('notice', $this->playerCharacter->getName().' found some medicinal herbs.');
 

@@ -42,7 +42,10 @@ class Actions
         $this->em->persist($player);
         $this->em->flush();
 
-        $this->session->getFlashBag()->add('notice', 'The Attack of '.$player->getName().' has incresed by '.SwordCrafting::SWORD_ATTACK);
+        $this->session->getFlashBag()->add(
+            'notice',
+            'The Attack of '.$player->getName().' has incresed by '.SwordCrafting::SWORD_ATTACK
+        );
     }
 
     /**
@@ -119,7 +122,10 @@ class Actions
         $this->em->persist($enemy);
         $this->em->flush();
 
-        $this->session->getFlashBag()->add('notice', $player->getName().' starts a fight against '.$enemy->getName());
+        $this->session->getFlashBag()->add(
+            'notice',
+            $player->getName().' starts a fight against '.$enemy->getName()
+        );
     }
 
     /**
@@ -141,15 +147,22 @@ class Actions
     public function fightPhase($attacker, $defender)
     {
         $roll = rand(1, 100);
+        $this->session->getFlashBag()->add('notice', 'Rolled a '.$roll.' on fight phase');
 
         $damage = $attacker->getAttack() - $defender->getDefense();
 
         if ($roll > 50) {
             $defender->setHealth($defender->getHealth() - $damage);
 
-            $this->session->getFlashBag()->add('notice', 'During fight phase, '.$defender->getName().' had loose '.($attacker->getAttack() - $defender->getDefense()).' health points');
+            $this->session->getFlashBag()->add(
+                'notice',
+                'During fight phase, '.$defender->getName().' had loose '.($attacker->getAttack() - $defender->getDefense()).' health points'
+            );
         } else {
-            $this->session->getFlashBag()->add('notice', 'During fight phase, '.$attacker->getName().' missed the attack');
+            $this->session->getFlashBag()->add(
+                'notice',
+                'During fight phase, '.$attacker->getName().' missed the attack'
+            );
         }
 
         $this->em->persist($defender);

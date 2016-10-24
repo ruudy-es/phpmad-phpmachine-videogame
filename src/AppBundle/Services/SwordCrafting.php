@@ -56,13 +56,13 @@ class SwordCrafting
     {
         $this->item = $item;
 
-        $this->transite();
+        $this->decide();
     }
 
     /**
      * Automatic moves
      */
-    protected function transite()
+    protected function decide()
     {
         $marking = $this->workflowComponent->getMarking($this->item);
 
@@ -187,7 +187,7 @@ class SwordCrafting
     protected function startRealProcess()
     {
         try {
-            $this->workflowComponent->apply($this->item, 'craft_it');
+            $this->workflowComponent->apply($this->item, 'craft_starts');
 
             $this->session->getFlashBag()->add(
                 'notice',

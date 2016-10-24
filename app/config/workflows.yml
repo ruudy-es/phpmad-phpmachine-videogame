@@ -21,7 +21,7 @@ framework:
                 knowledge_acquired:
                     from: draft
                     to: trade_skill_learned
-                craft_it:
+                craft_starts:
                     from: trade_skill_learned
                     to:
                       - learning_recipe
