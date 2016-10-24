@@ -226,24 +226,23 @@ class PlayerVsEnemy
     protected function checkAidFound()
     {
         $roll = rand(1, 100);
-        $this->session->getFlashBag()->add('notice', 'Rolled a '.$roll.' finding aid');
-
-        var_dump($roll);
-        var_dump($roll % 3);
-        var_dump($roll % 3 === 0);
-        die();
+        $this->session->getFlashBag()->add(
+            'notice',
+            $this->playerCharacter->getName().' rolled a '.$roll.' finding aid (multiple of 3 required).'
+        );
 
         if ($roll % 3 == 0 && $this->stateMachine->can('aid_found')) {
             $this->stateMachine->apply('aid_found');
-            $this->session->getFlashBag()->add('notice', $this->playerCharacter->getName().' found some medicinal herbs.');
+            $this->session->getFlashBag()->add(
+                'notice',
+                $this->playerCharacter->getName().' found some medicinal herbs.'
+            );
 
             $this->actions->heal($this->playerCharacter);
-
-            $this->transitionsDone++;
-
-            return true;
         }
 
-        return false;
+        $this->transitionsDone++;
+
+        return true;
     }
 }

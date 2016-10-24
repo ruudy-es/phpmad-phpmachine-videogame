@@ -8,7 +8,7 @@
 
 namespace AppBundle\Validator\SwordCrafting;
 
-use AppBundle\Entity\Material;
+use AppBundle\Entity\Item;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Constraint;

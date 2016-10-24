@@ -34,9 +34,11 @@ class IsRecipeLearnedValidator extends ConstraintValidator
      */
     public function validate($value, Constraint $constraint)
     {
-        // TODO: Implement validate() method.
         $roll = rand(0, 100);
-        $this->session->getFlashBag()->add('notice', 'Rolled a '.$roll.' studying the recipe');
+        $this->session->getFlashBag()->add(
+            'notice',
+            'Rolled a '.$roll.' studying the recipe (70 required).'
+        );
 
         if ($roll < 70) {
             $this->context->buildViolation($constraint->message)

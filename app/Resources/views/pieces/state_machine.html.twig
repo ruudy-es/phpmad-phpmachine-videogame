@@ -2,19 +2,17 @@
     <h4>Me vs Enemy (State Machine)</h4>
     <div class="row">
         <div class="col-sm-12">
+            <form method="post" action="{{ path('player_vs_enemy') }}" class="pull-left">
+                <input type="hidden" name="times" value="1">
+                <button type="submit" class="btn btn-default">1 Turn</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <form method="post" action="{{ path('player_vs_enemy') }}" class="pull-left">
-                            <input type="hidden" name="times" value="1">
-                            <button type="submit" class="btn btn-default">1 Turn</button>
-                        </form>
-                    </li>
                     {% if player_character.fightingWith is not null %}
-                        {#<p class="navbar-text">{{ player_character.fightingWith.name }}{{ ' - ' }}{{ player_character.fightingWith.health }}</p>#}
-                        {#<a class="navbar-brand" href="#">#}
-                        {#<img width="22px" src="{{ asset('images/health.png') }}">#}
-                        {#</a>#}
                         <li>
                             <p class="navbar-text">{{ player_character.fightingWith.name }}{{ ' - ' }}{{ player_character.fightingWith.mapZone.name }}</p>
                         </li>

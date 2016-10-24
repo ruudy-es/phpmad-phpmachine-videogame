@@ -106,7 +106,6 @@ class Actions
      */
     public function fightStarts($player, $enemy)
     {
-        // Database Changes in base of the actions happened
         // We store who we are fighting with
         $player->setFightingWith($enemy);
 
@@ -147,7 +146,10 @@ class Actions
     public function fightPhase($attacker, $defender)
     {
         $roll = rand(1, 100);
-        $this->session->getFlashBag()->add('notice', 'Rolled a '.$roll.' on fight phase');
+        $this->session->getFlashBag()->add(
+            'notice',
+            'Rolled a '.$roll.' on fight phase (50 required).'
+        );
 
         $damage = $attacker->getAttack() - $defender->getDefense();
 

@@ -8,6 +8,7 @@
 
 namespace AppBundle\Validator\SwordCrafting;
 
+use AppBundle\Entity\Item;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Constraint;
@@ -35,7 +36,10 @@ class IsIronCollectedValidator extends ConstraintValidator
     public function validate($item, Constraint $constraint)
     {
         $roll = rand(0, 100);
-        $this->session->getFlashBag()->add('notice', 'Rolled a '.$roll.' collecting iron');
+        $this->session->getFlashBag()->add(
+            'notice',
+            'Rolled a '.$roll.' collecting iron (70 required),'
+        );
 
         if ($roll < 70) {
             $this->context->buildViolation($constraint->message)
