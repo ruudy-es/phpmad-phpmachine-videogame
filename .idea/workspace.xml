@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43fa9fe4-7d54-4732-a310-29c689b0321e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pieces/workflows.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pieces/workflows.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/workflows.yml" afterPath="$PROJECT_DIR$/app/config/workflows.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Services/Actions.php" afterPath="$PROJECT_DIR$/src/AppBundle/Services/Actions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php" afterPath="$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Services/SwordCrafting.php" afterPath="$PROJECT_DIR$/src/AppBundle/Services/SwordCrafting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollectedValidator.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsIronCollectedValidator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearnedValidator.php" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/SwordCrafting/IsRecipeLearnedValidator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="phpmad-sm-and-wfn.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,16 +33,6 @@
               <folding>
                 <marker date="1477313014000" expanded="true" signature="719:925" placeholder="craft_starts:" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerCharacterRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/PlayerCharacterRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-33.041668">
-              <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -88,11 +71,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerVsEnemy.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerVsEnemy.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3789765">
+            <state vertical-scroll-proportion="-21.416666">
               <caret line="99" column="22" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.10445683">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -152,7 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AppBundle/Validator/PlayerVsEnemy/isRequiredTradeSkillLearned.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/WeaponCrafting/isRequiredTradeSkillLearned.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/WeaponCrafting/isRequiredTradeSkillLearnedValidator.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Validator/WeaponCrafting/IsLeatherBoughtValidator.php" />
@@ -203,6 +198,7 @@
         <option value="$PROJECT_DIR$/app/Resources/views/pieces/state_machine.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pieces/workflows.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -752,16 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.256167">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/TradeSkillRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.25">
@@ -1114,8 +1100,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Services/PlayerVsEnemy.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3789765">
+        <state vertical-scroll-proportion="-21.416666">
           <caret line="99" column="22" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10445683">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
           <folding />
         </state>
       </provider>
