@@ -15,4 +15,5 @@
 /vendor/
 /web/bundles/
 
-.idea
+# Ides
+.idea*
